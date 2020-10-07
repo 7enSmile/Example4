@@ -10,7 +10,9 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     FragmentOne f1=new FragmentOne();
     FragmentSecond f2=new FragmentSecond();
-    FragmentThree f3=new FragmentThree();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -58,9 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     public void change(View view){
 
-        switch (numberPress % 3) {
+        switch (numberPress % 2) {
             case 1: {
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag,f1,"new").commit();
@@ -68,21 +72,31 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             }
-            case 2: {
+            case 0: {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag,f2,"second").commit();
 
                 break;
             }
-            case 0: {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frag,f3,"second").commit();
 
-            }
         }
         numberPress++;
 
 
 
         }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.menuHistory:{
+                break;
+            }
+        }
+        return true;
+    }
     protected void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putString("result2",f2.resultText);

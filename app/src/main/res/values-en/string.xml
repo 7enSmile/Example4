@@ -5,5 +5,6 @@
     <string name="first_tchk" translatable="false">1 point</string>
     <string name="second_tchk" translatable="false">2 point</string>
     <string name="get_result" translatable="false">Calculation</string>
+    <string name="hisroy" translatable="false">History</string>
 
 </resources>
