@@ -85,18 +85,29 @@ public class FragmentSecond extends Fragment {
         Integer B=Integer.parseInt(objB.getText().toString());
         resultText=Integer.toString(A+B);
         resText.setText(resultText);
+        MainActivity parent = (MainActivity)getActivity();
+        historyItem history=new historyItem("Результат 2 фрагмента:"+resultText);
+
+        parent.addHistory(history);
     }
     public void ClickMinus(){
         Integer A=Integer.parseInt(objA.getText().toString());
         Integer B=Integer.parseInt(objB.getText().toString());
         resultText=Integer.toString(A-B);
         resText.setText(resultText);
+        MainActivity parent = (MainActivity)getActivity();
+        historyItem history=new historyItem("Результат 2 фрагмента:"+resultText);
+        parent.addHistory(history);
     }
     public void ClickUmn(){
         Integer A=Integer.parseInt(objA.getText().toString());
         Integer B=Integer.parseInt(objB.getText().toString());
         resultText=Integer.toString(A*B);
         resText.setText(resultText);
+        MainActivity parent = (MainActivity)getActivity();
+        historyItem history=new historyItem("Результат 2 фрагмента:"+resultText);
+
+        parent.addHistory(history);
     }
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);

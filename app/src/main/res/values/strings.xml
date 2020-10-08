@@ -6,7 +6,8 @@
     <string name="second_tchk" translatable="false">2 точка</string>
     <string name="get_result" translatable="false">Рассчет</string>
     <string name="hisroy" translatable="false">История</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history_text_first" translatable="false">Результат 1 фрагмента:</string>
+    <string name="history_text_second" translatable="false">Результат 2 фрагмента:</string>
+
 
 </resources>

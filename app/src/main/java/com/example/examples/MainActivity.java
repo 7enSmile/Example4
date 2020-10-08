@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,10 +20,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.util.ArrayList;
+
 import static android.graphics.Color.rgb;
 
 public class MainActivity extends AppCompatActivity {
     int numberPress=0;
+    public ArrayList<historyItem>historyList=new ArrayList<>();
+    public static final String HISTORY_KEY = "history";
 
 
 
@@ -92,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.menuHistory:{
+                Intent intent =new Intent(this,HistoryActivity2.class);
+                intent.putExtra( HISTORY_KEY,historyList);
+                startActivity(intent);
+
                 break;
             }
         }
@@ -103,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
 
         savedInstanceState.putString("result1",f1.resultText);
 
+    }
+    public void addHistory(historyItem history){
+        historyList.add(history);
     }
 
 

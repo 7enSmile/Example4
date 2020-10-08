@@ -75,6 +75,12 @@ public class FragmentOne extends Fragment {
         Double res=Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
         resultText=Double.toString(res);
         resText.setText(resultText);
+        MainActivity parent = (MainActivity)getActivity();
+
+
+        parent.addHistory(new historyItem("Результат 1 фрагмента:"+resultText));
+
+
         Toast.makeText(getActivity(), resultText, Toast.LENGTH_SHORT).show();
 
 
