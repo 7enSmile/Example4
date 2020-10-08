@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 f1.resultText=result1;
             if(result2!=null)
                 f2.resultText=result2;
+            historyList.addAll(savedInstanceState.<historyItem>getParcelableArrayList("history"));
         }
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putString("result2",f2.resultText);
 
         savedInstanceState.putString("result1",f1.resultText);
+        savedInstanceState.putParcelableArrayList("history",historyList);
 
     }
     public void addHistory(historyItem history){

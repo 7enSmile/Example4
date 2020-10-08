@@ -114,6 +114,7 @@ public class FragmentSecond extends Fragment {
         savedInstanceState.putString("result2",resultText);
 
 
+
     }
 
 }
