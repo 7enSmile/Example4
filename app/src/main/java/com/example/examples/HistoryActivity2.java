@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,4 +25,6 @@ public class HistoryActivity2 extends AppCompatActivity {
         historyAdapter adapter=new historyAdapter(this,R.layout.history_item,intent.<historyItem>getParcelableArrayListExtra("history"));
         mListView.setAdapter(adapter);
     }
+
+
 }
